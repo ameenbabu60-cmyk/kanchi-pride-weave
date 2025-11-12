@@ -44,16 +44,11 @@ export const ProductCard = ({ title, price, originalPrice, image, imageAlt }: Pr
         </h3>
         
         <div className="flex items-center gap-2">
-          <span className="text-xl font-bold text-primary">₹{price}</span>
+          <span className="text-xl font-bold text-primary">AED {price}</span>
           {originalPrice && (
-            <>
-              <span className="text-sm text-muted-foreground line-through">
-                ₹{originalPrice}
-              </span>
-              <span className="text-xs font-semibold text-accent bg-accent/10 px-2 py-1 rounded">
-                SALE
-              </span>
-            </>
+            <span className="text-sm text-muted-foreground line-through">
+              AED {originalPrice}
+            </span>
           )}
         </div>
       </div>

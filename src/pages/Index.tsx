@@ -18,12 +18,14 @@ import jewellery3 from "@/assets/jewellery-3.webp";
 import jewellery4 from "@/assets/jewellery-4.webp";
 import jewellery5 from "@/assets/jewellery-5.webp";
 import jewellery6 from "@/assets/jewellery-6.webp";
+import pattuCategory from "@/assets/pattu-saree-category.jpg";
+import designerCategory from "@/assets/designer-saree-category.jpg";
 
 const categories = [
   {
     title: "Pattu Saree Collection",
     description: "Handcrafted pure silk sarees with traditional zari work and vibrant designs",
-    image: saree1,
+    image: pattuCategory,
     imageAlt: "Traditional Kanchipuram Silk Sarees",
   },
   {
@@ -35,7 +37,7 @@ const categories = [
   {
     title: "Designer Sarees",
     description: "Contemporary designs with traditional craftsmanship for modern celebrations",
-    image: saree3,
+    image: designerCategory,
     imageAlt: "Designer Silk Sarees",
   },
 ];

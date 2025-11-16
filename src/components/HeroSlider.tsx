@@ -1,47 +1,27 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import heroMobile1 from "@/assets/hero-mobile-1.jpg";
-import heroMobile2 from "@/assets/hero-mobile-2.png";
+import hero3 from "@/assets/hero-3.jpg";
+import hero4 from "@/assets/hero-4.jpg";
+import hero5 from "@/assets/hero-5.jpg";
 
-const desktopSlides = [
+const slides = [
   {
-    image: hero1,
-    alt: "Kancheepuram Silk Sarees Collection",
+    image: hero3,
+    alt: "Premium Silk Sarees Collection",
   },
   {
-    image: hero2,
-    alt: "Traditional Silk Sarees",
-  },
-];
-
-const mobileSlides = [
-  {
-    image: heroMobile1,
-    alt: "New Arrivals Collection",
+    image: hero4,
+    alt: "Traditional Kanchipuram Sarees",
   },
   {
-    image: heroMobile2,
-    alt: "Sheer Elegance Collection",
+    image: hero5,
+    alt: "Exclusive Designer Sarees",
   },
 ];
 
 export const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const slides = isMobile ? mobileSlides : desktopSlides;
 
   useEffect(() => {
     const timer = setInterval(() => {

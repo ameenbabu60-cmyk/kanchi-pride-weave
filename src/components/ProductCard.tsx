@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, ShoppingCart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
   title: string;
@@ -11,8 +12,13 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ title, price, originalPrice, image, imageAlt }: ProductCardProps) => {
+  const navigate = useNavigate();
+  
   return (
-    <Card className="group overflow-hidden border-border hover:shadow-xl transition-all duration-300">
+    <Card 
+      className="group overflow-hidden border-border hover:shadow-xl transition-all duration-300 cursor-pointer"
+      onClick={() => navigate("/product/1")}
+    >
       <div className="relative aspect-[3/4] overflow-hidden bg-muted">
         <img
           src={image}

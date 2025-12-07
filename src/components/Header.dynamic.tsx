@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Search, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,16 +8,24 @@ import logo from "@/assets/logo.png";
 
 export const Header = () => {
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const navigate = useNavigate();
   const { data: siteInfo } = useCmsContent("site_info");
 
   const siteData = (siteInfo as any)?.content || { logo: logo, title: "Kanchi Pride", tagline: "Traditional Elegance" };
+
+  const handleLogoClick = () => {
+    navigate("/");
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-16 md:h-20 items-center justify-between gap-4">
           {/* Logo & Brand */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          <div 
+            className="flex items-center gap-3 flex-shrink-0 cursor-pointer"
+            onClick={handleLogoClick}
+          >
             <img 
               src={siteData.logo} 
               alt={siteData.title} 
